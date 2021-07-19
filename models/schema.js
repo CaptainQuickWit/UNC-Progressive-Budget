@@ -2,20 +2,21 @@
 /*boiler code only*/
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const aSchema = new Schema({
+const budgetSchema = new Schema({
   subsituteVar: {
     type: String,
     trim: true,
-    required: "Enter a value"
+    required: "What do you want this transaction to be labeled as"
   },
   object: {
     type: Number,
-    required: "Enter a value"
+    required: "Enter the amount in USD"
   },
   date: {
     type: Date,
     default: Date.now
   }
 });
-const aSchema = mongoose.model("aSchema", aSchemaSchema);
-module.exports = aSchema;
+const budgetModel = mongoose.model("budgetSchema", budgetSchema);
+//export
+module.exports = budgetModel;
