@@ -8,6 +8,7 @@ const budgetSchema = new Schema({
     trim: true,
     required: "What do you want this transaction to be labeled as"
   },
+  
   object: {
     type: Number,
     required: "Enter the amount in USD"
@@ -18,5 +19,6 @@ const budgetSchema = new Schema({
   }
 });
 const budgetModel = mongoose.model("budgetSchema", budgetSchema);
+
 //export
 module.exports = budgetModel;
