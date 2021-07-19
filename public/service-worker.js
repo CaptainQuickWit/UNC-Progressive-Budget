@@ -10,7 +10,7 @@ const CACHE_ME = [
   ];
 
 //loads data in cashe
-self.on("install", function(evt) {
+self.addEventListener("install", function(evt) {
     // async function. waiting. 
     evt.waitUntil(
       caches.open(DATA_CACHE_NAME).then((cache) => cache.add("/api/transaction"))
@@ -44,7 +44,7 @@ function keyCheck(name,dataName,key) {
     }
 }
 
-self.on("activate", function(evt) {
+self.addEventListener("activate", function(evt) {
 
   evt.waitUntil(
 
@@ -65,7 +65,7 @@ self.on("activate", function(evt) {
 });
 
 // fetch
-self.on("fetch", function(evt) {
+self.addEventListener("fetch", function(evt) {
 
   // cache successful requests to the API
 
@@ -107,7 +107,7 @@ self.on("fetch", function(evt) {
       return cache.match(evt.request).then(response => {
 
         return response || fetch(evt.request);
-        
+
       });
     })
   );

@@ -1,0 +1,7 @@
+{
+    "name": "UNC Budget Tracker",
+    "short_name": "UNC Budget Tracker",
+    "start_url": "/",
+    "display": "standalone"
+    
+}
